@@ -1,7 +1,7 @@
-import Notification from "components/Notification/Notification";
 
-const Statistics = ({ good, neutral, bad, total, positiveFeedback }) => {
-    return total===0 ? <Notification message="There is no feedback"/> : (
+
+const Statistics = ({ good, neutral, bad, total, positiveFeedback, children }) => {
+    return total !==0 ? (
         <div>
             <p>Good: {good}</p>
             <p>Neutral: {neutral}</p>
@@ -9,6 +9,6 @@ const Statistics = ({ good, neutral, bad, total, positiveFeedback }) => {
             <p>Total: {total}</p>
             <p>Positive feedback: {positiveFeedback}</p>
         </div>
-    )
+    ) : children
 };
 export default Statistics;
